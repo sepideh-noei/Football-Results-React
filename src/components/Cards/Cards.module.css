@@ -1,0 +1,18 @@
+.container {
+    margin: 50px 0;
+}
+.card {
+    margin: 0 80px !important;
+    border-bottom: 4px solid rgb(73, 73, 75);
+}
+.date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.status {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20%;
+}

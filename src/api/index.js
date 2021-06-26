@@ -12,6 +12,6 @@ export const fetchData = async () => {
       return { matches };
    }
    catch(error){
-
+      
    }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 const WeekSelector = () => {
     return (
-        <h1>WeekSelector</h1>
+        <p>weakselector</p>
     )
 }
 export default WeekSelector;
