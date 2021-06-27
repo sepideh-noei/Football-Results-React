@@ -1,9 +1,13 @@
 body {
     background-color: rgb(119, 117, 117);
 }
-
 .container {
     display: grid;
     align-items: center;
     justify-content: center;
+}
+.title {
+    text-align: left;
+    padding-left: 2%;
+    color: rgb(255, 255, 255);
 }

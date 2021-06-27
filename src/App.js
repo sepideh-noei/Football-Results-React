@@ -3,8 +3,6 @@ import {Cards , WeekSelector} from './components';
 import styles from './App.module.css';
 import {fetchData} from './api';
 
-
-
 class App extends React.Component {
   state = {
     data: {},
@@ -15,20 +13,20 @@ class App extends React.Component {
   const fetchedData = await fetchData();
   this.setState ({data:fetchedData})
  }
-
+ 
  handleWeekChange = async(matchday) => {
-
   const fetchedData = await fetchData(matchday);
-
-   console.log(fetchedData);
-   console.log(matchday);
+  this.setState({data: fetchedData , matchday: matchday})
  }
   
   render() {
     const {data} = this.state;
     return (
     <div className={styles.container}>
-
+      
+      <p className={styles.title}>
+        <h1>Football Results</h1><hr/>
+      </p>
       <WeekSelector handleWeekChange={this.handleWeekChange}/>
       <Cards data={data} />
       

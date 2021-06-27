@@ -11,21 +11,20 @@ const WeekSelector = ({handleWeekChange}) => {
         const fetchAPI = async () => {
             setfetchedWeek(await fetchWeek());
         }
-        fetchAPI();
+          fetchAPI();
     }, [setfetchedWeek]);
      
-    console.log(fetchedWeek);
-
-   // for (let index = 0; index < fetchedWeek.length; index+=10) {
-       // return fetchedWeek[index];  }
-
     return (
-
         <FormControl className={styles.controlstyle}>
             <NativeSelect defaultValue="" onChange={(e) => handleWeekChange(e.target.value)} className={styles.dropdown}>       
-                <option value="global">all Week</option>
-                {!!fetchedWeek &&  fetchedWeek.map((matchday , index) => 
-                  <option key={index} value={matchday}> {matchday} </option>)};
+                <option value={0}>all Week</option>
+                {!!fetchedWeek &&  fetchedWeek.map((matchday , index) => {
+                    if (index < 38)
+                    return (
+                    <>
+                    <option key={index} value={index+1}> {index+1} </option>
+                    </>
+                    )})}
             </NativeSelect>
         </FormControl>
 

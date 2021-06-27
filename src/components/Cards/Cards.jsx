@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Card, CardContent, Typography, Grid } from '@material-ui/core';
 import styles from './Cards.module.css';
 import cx from 'classnames';
+import { fetchData } from '../../api';
 
 const Cards = ({ data: {matches} }) => {
+
     if (!matches){
         return 'loading';
     }
@@ -12,8 +14,6 @@ const Cards = ({ data: {matches} }) => {
         <div className={styles.container}>
             <Grid container justify="center">
             {!!matches && matches.map((item , index) => {
-                console.log(item)
-
                 return (
                     <Grid key={index} item component={Card} xs={12} md={12} className={cx(styles.card)}>
                         
@@ -35,6 +35,7 @@ const Cards = ({ data: {matches} }) => {
                     <CardContent>
                         <Typography className={cx(styles.refereestyle)}  color="textPrimary" variant="body2" gutterBottom> "The name of the referee of the match" {item.referees.name} </Typography>
                     </CardContent>  
+                    
                     </Grid> 
                 )
             })}               
