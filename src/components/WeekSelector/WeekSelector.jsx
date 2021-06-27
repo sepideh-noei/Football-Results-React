@@ -16,12 +16,14 @@ const WeekSelector = ({handleWeekChange}) => {
      
     console.log(fetchedWeek);
 
+   // for (let index = 0; index < fetchedWeek.length; index+=10) {
+       // return fetchedWeek[index];  }
+
     return (
 
         <FormControl className={styles.controlstyle}>
-            <NativeSelect defaultValue="" onChange={(e) => handleWeekChange(e.target.value)} className={styles.dropdown}>
+            <NativeSelect defaultValue="" onChange={(e) => handleWeekChange(e.target.value)} className={styles.dropdown}>       
                 <option value="global">all Week</option>
-                <option value="global">aa</option>
                 {!!fetchedWeek &&  fetchedWeek.map((matchday , index) => 
                   <option key={index} value={matchday}> {matchday} </option>)};
             </NativeSelect>
