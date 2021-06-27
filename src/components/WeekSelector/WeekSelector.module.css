@@ -1,0 +1,10 @@
+.controlstyle {
+    display: grid;
+    align-items: center;
+    justify-content: center;  
+}
+.dropdown {
+    background-color: rgb(236, 236, 236);
+    width: 20%;  
+    margin-top: 5%;
+}
